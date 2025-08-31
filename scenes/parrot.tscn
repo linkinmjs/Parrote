@@ -116,9 +116,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5huwt")
 }],
-"loop": true,
+"loop": false,
 "name": &"special",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vda7l"]
@@ -132,8 +132,9 @@ script = ExtResource("1_vda7l")
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_5sgfo")
-animation = &"flying"
-frame_progress = 0.609639
+animation = &"special"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -14)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://u6or6lus3qcs"]
+
+[ext_resource type="PackedScene" uid="uid://bt6ej2icbaj5w" path="res://scenes/parrot.tscn" id="1_2venv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p835"]
+size = Vector2(1260, 35)
+
+[node name="TestLEVEL" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(171, 333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(383, 250)
+shape = SubResource("RectangleShape2D_3p835")
+
+[node name="Parrot" parent="." instance=ExtResource("1_2venv")]
+position = Vector2(442, 371)
