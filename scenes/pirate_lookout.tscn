@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cmu88cf6l61gd"]
+[gd_scene load_steps=17 format=3 uid="uid://cmu88cf6l61gd"]
 
 [ext_resource type="Texture2D" uid="uid://b6nl6jod4axyv" path="res://assets/sprites/characters/pirate-03/Attack.png" id="1_qrfmu"]
 [ext_resource type="Texture2D" uid="uid://b6t163qm4fyr5" path="res://assets/sprites/characters/pirate-03/Idle2.png" id="2_6g0nl"]
+[ext_resource type="Script" uid="uid://dagw0t4nw7et3" path="res://scripts/pirate.gd" id="3_6g0nl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4u6f"]
 atlas = ExtResource("1_qrfmu")
@@ -64,7 +65,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ljaog")
 }],
-"loop": true,
+"loop": false,
 "name": &"action",
 "speed": 5.0
 }, {
@@ -89,18 +90,30 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrfmu"]
 size = Vector2(16.5, 5.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4u6f"]
+size = Vector2(16.5, 7.5)
+
 [node name="PirateLookout" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 4
+script = ExtResource("3_6g0nl")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Pirate" type="AnimatedSprite2D" parent="."]
 position = Vector2(28, -48)
 sprite_frames = SubResource("SpriteFrames_mv053")
-animation = &"idle"
+animation = &"action"
 autoplay = "idle"
-frame_progress = 0.909335
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -22)
 shape = SubResource("RectangleShape2D_qrfmu")
 one_way_collision = true
+
+[node name="ActionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
+position = Vector2(0, -28.5)
+shape = SubResource("RectangleShape2D_c4u6f")
+debug_color = Color(0.2, 0.552941, 0.278431, 0.266667)

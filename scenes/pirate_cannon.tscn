@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://51p65lhgra6s"]
+[gd_scene load_steps=25 format=3 uid="uid://51p65lhgra6s"]
 
 [ext_resource type="Texture2D" uid="uid://dwhorx0jimqgx" path="res://assets/sprites/characters/pirate-02/Attack.png" id="1_aw8to"]
+[ext_resource type="Script" uid="uid://dagw0t4nw7et3" path="res://scripts/pirate.gd" id="1_us4qm"]
 [ext_resource type="Texture2D" uid="uid://btuxg2qik4o1m" path="res://assets/sprites/characters/pirate-02/Idle.png" id="2_5y60m"]
 [ext_resource type="Texture2D" uid="uid://dnhms221x1c3v" path="res://assets/sprites/characters/pirate-02/Special.png" id="3_5y60m"]
 
@@ -136,7 +137,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ayeb5")
 }],
 "loop": true,
-"name": &"fire",
+"name": &"action",
 "speed": 5.0
 }, {
 "frames": [{
@@ -148,9 +149,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_us4qm"]
+size = Vector2(24, 6.75)
+
 [node name="PirateCannon" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 4
+script = ExtResource("1_us4qm")
+pirate_has_cannon = true
 
 [node name="Pirate" type="AnimatedSprite2D" parent="."]
 position = Vector2(30, -48)
@@ -168,3 +174,11 @@ position = Vector2(66, -48)
 sprite_frames = SubResource("SpriteFrames_dga35")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.102844
+
+[node name="ActionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
+position = Vector2(1, -28.5)
+shape = SubResource("RectangleShape2D_us4qm")
+debug_color = Color(0.2, 0.552941, 0.278431, 0.266667)

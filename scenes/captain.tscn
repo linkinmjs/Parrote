@@ -125,13 +125,14 @@ animations = [{
 size = Vector2(21, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkr8o"]
+size = Vector2(22, 8.5)
 
 [node name="Captain" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 4
 script = ExtResource("1_i1u5c")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Pirate" type="AnimatedSprite2D" parent="."]
 position = Vector2(9, -24)
 sprite_frames = SubResource("SpriteFrames_i3jyy")
 animation = &"idle"
@@ -146,6 +147,6 @@ one_way_collision = true
 [node name="ActionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
-position = Vector2(0, -35)
+position = Vector2(0, -31.25)
 shape = SubResource("RectangleShape2D_vkr8o")
 debug_color = Color(0.2, 0.552941, 0.278431, 0.266667)
