@@ -145,6 +145,7 @@ shape = SubResource("RectangleShape2D_tsyxl")
 one_way_collision = true
 
 [node name="ActionArea" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
 position = Vector2(0, -31.25)

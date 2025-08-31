@@ -112,6 +112,7 @@ shape = SubResource("RectangleShape2D_qrfmu")
 one_way_collision = true
 
 [node name="ActionArea" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
 position = Vector2(0, -28.5)

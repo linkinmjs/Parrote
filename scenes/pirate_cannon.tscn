@@ -174,9 +174,10 @@ position = Vector2(66, -48)
 sprite_frames = SubResource("SpriteFrames_dga35")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.102844
+frame_progress = 0.645675
 
 [node name="ActionArea" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
 position = Vector2(1, -28.5)
